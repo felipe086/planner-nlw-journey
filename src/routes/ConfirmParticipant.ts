@@ -4,7 +4,7 @@ import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 
-export async function ConfirmParticipant(app: FastifyInstance) {
+export async function confirmParticipant(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
     '/api/participants/:participantId/confirm',
     {
@@ -37,6 +37,8 @@ export async function ConfirmParticipant(app: FastifyInstance) {
         where: { id: participantId },
         data: { is_confirmed: true },
       })
+
+      return reply.redirect(`${env.WEB_BASE_URL}/trips/${participant.trip_id}`)
     }
   )
 }

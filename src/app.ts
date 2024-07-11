@@ -11,6 +11,9 @@ import { createActivity } from './routes/CreateActivity'
 import { getActivities } from './routes/GetActivities'
 import { createLink } from './routes/CreateLink'
 import { getLinks } from './routes/GetLinks'
+import { getParticipants } from './routes/GetParticipants'
+import { getParticipant } from './routes/GetParticipant'
+import { createInvite } from './routes/CreateInvite'
 
 export const app = fastify()
 
@@ -29,3 +32,6 @@ app.register(createActivity)
 app.register(getActivities)
 app.register(createLink)
 app.register(getLinks)
+app.register(getParticipants)
+app.register(getParticipant)
+app.register(createInvite)

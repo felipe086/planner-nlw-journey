@@ -1,3 +1,4 @@
+import { ClientError } from '@/errors/ClientError'
 import { prisma } from '@/lib/prisma'
 import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
@@ -33,7 +34,7 @@ export async function getParticipants(app: FastifyInstance) {
       })
 
       if (!trip) {
-        throw new Error('Trip not found.')
+        throw new ClientError('Trip not found.')
       }
 
       return reply.send({ participants: trip.participants })

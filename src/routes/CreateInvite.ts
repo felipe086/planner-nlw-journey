@@ -1,6 +1,6 @@
 import { dayjs } from '@/lib/dayjs'
 import { prisma } from '@/lib/prisma'
-import { getMailClient } from '@/mail/nodemailer'
+import { getMailClient } from '@/lib/nodemailer'
 import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'

@@ -1,7 +1,7 @@
 import { env } from '@/env'
 import { dayjs } from '@/lib/dayjs'
+import { getMailClient } from '@/lib/nodemailer'
 import { prisma } from '@/lib/prisma'
-import { getMailClient } from '@/mail/nodemailer'
 import { FastifyInstance } from 'fastify'
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
 import nodemailer from 'nodemailer'

@@ -1,6 +1,6 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
-import { getMailClient } from '@/mail/nodemailer'
+import { getMailClient } from '@/lib/nodemailer'
 import { prisma } from '@/lib/prisma'
 import { dayjs } from '@/lib/dayjs'
 import { z } from 'zod'

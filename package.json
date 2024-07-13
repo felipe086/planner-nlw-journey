@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "start:dev": "tsx watch --env-file .env src/server.ts",
+    "migrations": "prisma migrate dev",
+    "start": "node --watch --env-file .env build/server.js",
+    "build": "tsup src --out-dir build"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +16,7 @@
     "@types/node": "^20.14.10",
     "@types/nodemailer": "^6.4.15",
     "prisma": "^5.16.1",
+    "tsup": "^8.1.0",
     "tsx": "^4.16.2",
     "typescript": "^5.5.3"
   },
